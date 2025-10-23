@@ -31,7 +31,6 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-static int			ft_nbrlen(long nbr);
 size_t				ft_strlen(const char *str);
 void				*ft_bzero(void *s, size_t n);
 void				ft_putstr_fd(char *str, int fd);

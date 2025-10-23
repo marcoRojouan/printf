@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 13:33:42 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/22 18:00:30 by mrojouan         ###   ########.fr       */
+/*   Created: 2025/10/21 17:06:09 by mrojouan          #+#    #+#             */
+/*   Updated: 2025/10/23 18:53:20 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_F
-#define PRINT_F
+#include "ft_printf.h"
 
-#include "libft/libft.h"
+int ft_putnbr_hex(unsigned int nbr, char c);
 
-int	ft_print_char(va_list list);
-int	ft_print_str(va_list list);
-int	ft_print_int(va_list list);
+int	ft_print_hex(va_list list, char c)
+{
+	static int nbr;
+	int len;
 
-void	ft_putnbr_hex(unsigned int nbr, char c);
-
-
-#endif
+	nbr = va_arg(list, int);
+	if (!nbr)
+		return (0);
+	len = ft_putnbr_hex(nbr, c);
+	return (len);
+	
+}

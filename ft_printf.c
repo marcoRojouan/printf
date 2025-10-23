@@ -6,12 +6,11 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:58:07 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/22 17:58:26 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/10/23 18:53:41 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "printf.h"
+#include "ft_printf.h"
 
 int ft_printf(const char *format, ...)
 {
@@ -25,7 +24,8 @@ int ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			c = format[i + 1];
+			i++;
+			c = format[i];
 			if(c == 'c')
 				ft_print_char(list);
 			else if (c == 's')
@@ -35,14 +35,15 @@ int ft_printf(const char *format, ...)
 			else if (c == 'x' || c == 'X')
 				ft_print_hex(list, c);
 		}
+		else 
+			ft_putchar_fd(format[i], 1);
 		i++;
 	}	
 	va_end(list);
+	return (0);
 }
-
-#include <stdio.h>
 
 int main(void)
 {
-	ft_printf("caca du %s ca mets %d minutes", "pipi", 3);
+	ft_printf("%s %s %d asdfasdfasfsadfsafasf", "pipi", "oups pardon", 3);
 }

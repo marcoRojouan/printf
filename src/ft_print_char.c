@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_twoargs.c                                 :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 17:13:31 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/22 15:05:45 by mrojouan         ###   ########.fr       */
+/*   Created: 2025/10/21 16:58:32 by mrojouan          #+#    #+#             */
+/*   Updated: 2025/10/23 18:53:11 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void print_twoargs(char *fmt, ...)
-{	
-	va_list list;
-	va_start (list, fmt);
-	int i = 0;
-
-	while (fmt[i])
-	{
-		if (fmt[i] == 's')
-		{
-			ft_putnbr_fd(ft_strlen(va_arg(list, char *)), 1);
-		}
-		i++;
-	}
-	va_end(list);
-}
-
-int main(void)
+int	ft_print_char(va_list list)
 {
-	print_twoargs("sss", "bwerweradaboum", "caca", "pipi");
+	int	c;
+
+	c = va_arg(list, int);	
+	ft_putchar_fd(c, 1);
+	return (1);
 }
