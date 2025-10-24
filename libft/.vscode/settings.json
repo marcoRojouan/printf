@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "*.dbclient-js": "javascript",
-        "unistd.h": "c",
-        "stdio.h": "c"
-    }
-}

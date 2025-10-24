@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:58:07 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/23 18:53:41 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/10/24 18:29:05 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int ft_printf(const char *format, ...)
 				ft_print_hex(list, c);
 		}
 		else 
-			ft_putchar_fd(format[i], 1);
+			write(1, &format[i], 1);
 		i++;
 	}	
 	va_end(list);

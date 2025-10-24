@@ -6,11 +6,16 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:58:32 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/23 18:53:11 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/10/24 18:26:16 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
 
 int	ft_print_char(va_list list)
 {
