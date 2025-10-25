@@ -6,13 +6,13 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:58:47 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/24 18:30:23 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/10/25 16:20:01 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ void	ft_putstr_fd(char *s, int fd)
 int	ft_print_str(va_list list)
 {
 	int		len;
-	char 	*str;
+	char	*str;
 
 	str = va_arg(list, char *);
 	if (!str)
@@ -47,6 +47,6 @@ int	ft_print_str(va_list list)
 		return (6);
 	}
 	len = ft_strlen(str);
-	ft_putstr_fd(str, 1);	
+	ft_putstr_fd(str, 1);
 	return (len);
 }

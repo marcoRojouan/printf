@@ -6,44 +6,52 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:58:07 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/24 18:29:05 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/10/25 16:19:16 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+static int	ft_def_type(va_list list, char c)
 {
-	int	i;
-	va_list list;
-	va_start(list, format);
-	char	c;
+	if (c == 'c')
+		return (ft_print_char(list));
+	if (c == 's')
+		return (ft_print_str(list));
+	if (c == 'p')
+		return (ft_print_hex(list, c));
+	if (c == 'd' || c == 'i')
+		return (ft_print_int(list));
+	if (c == 'u')
+		return (ft_print_uns(list));
+	if (c == 'x' || c == 'X')
+		return (ft_print_hex(list, c));
+	if (c == '%')
+		return (write(1, "%", 1));
+	return (0);
+}
 
+int	ft_printf(const char *format, ...)
+{
+	int		i;
+	int		count;
+	va_list	list;
+
+	va_start(list, format);
+	count = 0;
 	i = 0;
-	while(format[i])
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			c = format[i];
-			if(c == 'c')
-				ft_print_char(list);
-			else if (c == 's')
-				ft_print_str(list);
-			else if (c == 'i' || c == 'd')
-				ft_print_int(list);
-			else if (c == 'x' || c == 'X')
-				ft_print_hex(list, c);
+			count += (ft_def_type(list, format[i]) - 1);
 		}
-		else 
+		else
 			write(1, &format[i], 1);
+		count++;
 		i++;
-	}	
+	}
 	va_end(list);
-	return (0);
-}
-
-int main(void)
-{
-	ft_printf("%s %s %d asdfasdfasfsadfsafasf", "pipi", "oups pardon", 3);
+	return (count);
 }

@@ -1,6 +1,6 @@
 CC = cc -Wall -Wextra -Werror
 
-NAME = printf.a
+NAME = libftprintf.a
 
 ARCS = -ar rcs
 
