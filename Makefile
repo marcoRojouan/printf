@@ -1,11 +1,11 @@
 CC = cc -Wall -Wextra -Werror
+INCLUDES = -I.
 
 NAME = libftprintf.a
 
 ARCS = -ar rcs
 
 SRC = src
-UTL = utils
 
 PRINTF_SRCS = ft_printf.c \
 	$(SRC)/ft_print_char.c \
@@ -22,6 +22,9 @@ all : $(NAME)
 
 $(NAME)	: $(OBJ)
 	$(ARCS) $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) $(INCLUDES) -c $< -o $@
 
 clean :
 	rm -rf $(OBJ)
