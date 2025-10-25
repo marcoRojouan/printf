@@ -6,13 +6,13 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:05:50 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/25 16:19:47 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/10/25 17:44:45 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_uns(unsigned int nbr)
+static int	ft_putnbr_uns(unsigned int nbr)
 {
 	int		count;
 	char	c;

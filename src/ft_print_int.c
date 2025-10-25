@@ -6,13 +6,13 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:59:02 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/25 16:19:36 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/10/25 17:44:31 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_fd(int n, int fd)
+static int	ft_putnbr_fd(int n, int fd)
 {
 	int		count;
 	char	c;
