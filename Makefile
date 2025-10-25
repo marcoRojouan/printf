@@ -12,8 +12,7 @@ PRINTF_SRCS = ft_printf.c \
 	$(SRC)/ft_print_str.c \
 	$(SRC)/ft_print_int.c \
 	$(SRC)/ft_print_uns.c \
-	$(SRC)/ft_print_hex.c \
-	$(SRC)/ft_print_ptr.c
+	$(SRC)/ft_print_hex.c
 
 SRCS =	$(PRINTF_SRCS)
 
