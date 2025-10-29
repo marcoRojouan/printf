@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:58:47 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/10/26 00:52:13 by loup             ###   ########.fr       */
+/*   Updated: 2025/10/29 11:47:26 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(char *str)
+static size_t	ft_strlen(char *str)
 {
 	int	i;
 
